@@ -2,8 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="Initial version">
-      <change afterPath="$PROJECT_DIR$/src/demo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/Climbing_stairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/Distinct_Subseq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/Fibonacci.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/Min_path_sum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/Steps_reach_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/coin_change.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/edit_distance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lec_1/Matrix_2d_Search.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lec_1/PrimeNoSOE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lec_1/prac.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lec_1/spiral_Matrix.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Array_Subset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Array_rec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Blocked_Path.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/CoinToss.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Coin_Denomination.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Dictionary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/English_Ruler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/GenerateParen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Increasing_Decreasing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/JumpingNo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/LetterKeypad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Lexographic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/MazePath.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Merge_Sort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/PalindromePartition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Suduko_Solver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Tower_of_Hanoi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Word_Search.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/Word_break2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/climbingStairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/nQueen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/permu_And_Comb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/rec_basic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/subsequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Recursion/twin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demo1.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,15 +69,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/shivang/IdeaProjects/DSA/src",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660836797365</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial version">
+      <created>1660840417915</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1660840417915</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
