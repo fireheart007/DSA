@@ -1,13 +1,25 @@
 package DP;
-
+//https://hack.codingblocks.com/app/contests/2766/1397/problem
 import java.util.Arrays;
 
 public class Steps_reach_1 {
     public static void main(String[] args) {
-//        int n=12;
+        int n=12;
+//        System.out.println(step(n));
 //        int[] dp=new int[n+2];
 //        System.out.println(oprTD(n,dp));
         System.out.println(oprBU(12));
+    }
+    public static int step(int n){ //Recursive code
+        if(n==1)
+            return 0;
+        if(n%2==0)
+            return step(n/2)+1;
+        else{
+            int sp1=step(n+1);
+            int sp2=step(n-1);
+            return Math.min(sp1,sp2)+1;
+        }
     }
     public static int oprTD(int n,int[] dp)
     {
