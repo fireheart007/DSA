@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="Initial version">
-      <change afterPath="$PROJECT_DIR$/src/practice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22,_10_00_pm_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_08_22__10_00_pm__Changes_.xml" beforeDir="false" />
+    <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="some update">
+      <change afterPath="$PROJECT_DIR$/src/DP/Palindrome_Partitioning_II.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DP/Steps_reach_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/Steps_reach_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DP/coin_change.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/coin_change.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DP/Distinct_Subseq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/Distinct_Subseq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660849979201</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="some update">
+      <created>1663170340582</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663170340582</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,7 +111,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial version" />
+    <MESSAGE value="some update" />
+    <option name="LAST_COMMIT_MESSAGE" value="some update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

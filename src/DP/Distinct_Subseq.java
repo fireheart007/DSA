@@ -17,8 +17,8 @@ public class Distinct_Subseq {
             return dp[idx1][idx2];
         if(str.charAt(idx1)==t.charAt(idx2))
         {
-            int sp1=subseqTD(str, idx1+1, t, idx2+1,dp);
-            int sp2=subseqTD(str, idx1+1, t, idx2,dp);
+            int sp1=subseqTD(str, idx1+1, t, idx2+1,dp); //include call
+            int sp2=subseqTD(str, idx1+1, t, idx2,dp); //exclude call
             dp[idx1][idx2]=sp1+sp2;
             return sp1+sp2;
         }
