@@ -1,12 +1,19 @@
 import java.util.*;
 public class practice {
     public static void main(String[] args) {
-        int n=2000;
-        if((n%4==0 && n%100!=0)||n%400==0){
-            System.out.println("It is a leap year");
+        int[] arr={1,3,2,4,7,6,9,10};
+        List<Integer> AL=new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]%2==0) {
+                AL.add(arr[i]);
+                arr[i] = -1;
+            }
         }
-        else
-            System.out.println("not leap year");
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]!=-1)
+                AL.add(arr[i]);
+        }
+        System.out.println(AL);
     }
 
 }
