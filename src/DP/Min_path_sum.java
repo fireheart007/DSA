@@ -37,11 +37,11 @@ public class Min_path_sum {
 //        To satisfy this condition -->
 //        if(i==arr.length || j==arr[0].length)
 //            return Integer.MAX_VALUE;
-//        We have to initialize sp1 & sp2 to Integer.MAX_VALUE if i==arr.length or j==arr[0].length so that we can calculate Math.min(sp1,sp2)
+//        We have to initialize sp1 & sp2 to Integer.MAX_VALUE if i+1==arr.length or j+1==arr[0].length so that we can calculate Math.min(sp1,sp2)
                 int sp1=Integer.MAX_VALUE,sp2=Integer.MAX_VALUE;
-                if(j<arr[0].length-1)
+                if(j+1<arr[0].length)
                     sp1=dp[i][j+1];
-                if(i<arr.length-1)
+                if(i+1<arr.length)
                     sp2=dp[i+1][j];
                 dp[i][j]=Math.min(sp1,sp2)+arr[i][j];
             }

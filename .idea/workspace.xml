@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="some update">
-      <change afterPath="$PROJECT_DIR$/src/DP/House_Robber2.java" afterDir="false" />
+    <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="initial version">
+      <change afterPath="$PROJECT_DIR$/src/DP/Wine_Selling.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DP/Min_path_sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/Min_path_sum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664221486619</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="initial version">
+      <created>1664459296951</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1664459296951</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,7 +155,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial version" />
     <MESSAGE value="some update" />
-    <option name="LAST_COMMIT_MESSAGE" value="some update" />
+    <MESSAGE value="initial version" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial version" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
