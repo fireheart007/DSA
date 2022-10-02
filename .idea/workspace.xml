@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="initial version">
-      <change afterPath="$PROJECT_DIR$/src/DP/Wine_Selling.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DP/LIS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DP/Min_path_sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/Min_path_sum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/practice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664459296951</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="initial version">
+      <created>1664484010901</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1664484010901</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,5 +167,8 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DSA$practice.ic" NAME="practice Coverage Results" MODIFIED="1664614437146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
