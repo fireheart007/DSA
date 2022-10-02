@@ -1,6 +1,7 @@
 package DP;
-
+//https://leetcode.com/problems/longest-increasing-subsequence/
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class LIS {
@@ -12,7 +13,9 @@ public class LIS {
 //        System.out.println(LISTD(arr,0,-1,new int[arr.length][arr.length+1])); //the prev_idx for the first element will be -1
 
 //        System.out.println(LISBU(arr));
-        System.out.println(LIS_nlogn(arr));
+//        System.out.println(LIS_nlogn(arr));
+        System.out.println(LIS_nlogn2(arr));
+
     }
 
 //    O(n^2) Complexity of all the methods below till Bottom Up
@@ -76,6 +79,25 @@ public class LIS {
                     else
                         s= mid+1;
                 }
+                AL.set(idx,arr[i]);  //we are inserting the element arr[i] in AL at the index where just bada element was present
+            }
+        }
+        return AL.size();
+    }
+
+    // the binary search applied above can be implemented using "Collections.binarySearch" function, so below is the alternative code of the above code
+    public static int LIS_nlogn2(int[] arr){
+        List<Integer> AL = new ArrayList<>();
+        AL.add(arr[0]); //first element of array is added directly into AL to compare with the rest of the elements of the array
+        for (int i = 1; i < arr.length; i++) {
+            if(arr[i]>AL.get(AL.size()-1)) //agar array ka element list me pade last element se bada hai to use list ke end me add kr do
+                AL.add(arr[i]);
+            else {
+//                This function returns an index of the element, if it is contained in the AL; otherwise, (-(insertion point) – 1).
+//                The insertion point is defined as the idx of just bada element.
+                int idx = Collections.binarySearch(AL,arr[i]);
+                if(idx<0)
+                    idx=Math.abs(idx+1); //if element is not present in AL then we have to do this to make idx +ve
                 AL.set(idx,arr[i]);  //we are inserting the element arr[i] in AL at the index where just bada element was present
             }
         }
