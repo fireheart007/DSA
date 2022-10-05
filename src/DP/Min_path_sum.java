@@ -1,7 +1,4 @@
 package DP;
-
-import java.util.Arrays;
-
 //link :- https://leetcode.com/problems/minimum-path-sum/
 public class Min_path_sum {
     public static void main(String[] args) {
