@@ -17,7 +17,7 @@ public class Uncrossed_Lines {
             sp1=uncrossLine(a,b,i+1,j+1)+1;
         else{ //if elements are not same then there will be 2 sub problems:-
             sp1=uncrossLine(a,b,i,j+1); // increment index of B and compare the current element of array A with rest of B
-            sp2=uncrossLine(a,b,i+1,j); //or increment index of A and compare that element with rest of B
+            sp2=uncrossLine(a,b,i+1,j); //or vice versa
         }
         return Math.max(sp1,sp2);
     }
