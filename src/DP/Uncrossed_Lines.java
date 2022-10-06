@@ -16,8 +16,8 @@ public class Uncrossed_Lines {
         if(a[i]==b[j]) //if both the elements are same then draw the line
             sp1=uncrossLine(a,b,i+1,j+1)+1;
         else{ //if elements are not same then there will be 2 sub problems:-
-            sp1=uncrossLine(a,b,i,j+1); //compare the current element of array A with next element of B
-            sp2=uncrossLine(a,b,i+1,j); //compare the next element of array A with current element of B
+            sp1=uncrossLine(a,b,i,j+1); // increment index of B and compare the current element of array A with rest of B
+            sp2=uncrossLine(a,b,i+1,j); //or increment index of A and compare that element with rest of B
         }
         return Math.max(sp1,sp2);
     }
