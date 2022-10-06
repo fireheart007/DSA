@@ -1,5 +1,6 @@
 package DP;
 //https://leetcode.com/problems/uncrossed-lines/
+//Similar to LCS
 public class Uncrossed_Lines {
     public static void main(String[] args) {
         int[] a={2,5,1,2,5};
