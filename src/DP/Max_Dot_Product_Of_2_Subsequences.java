@@ -1,5 +1,6 @@
 package DP;
 //https://leetcode.com/problems/max-dot-product-of-two-subsequences/
+//Similar to LCS
 public class Max_Dot_Product_Of_2_Subsequences {
     public static void main(String[] args) {
         int[] a={-1,-1};
