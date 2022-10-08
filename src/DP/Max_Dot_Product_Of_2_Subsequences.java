@@ -17,6 +17,10 @@ public class Max_Dot_Product_Of_2_Subsequences {
         int sp2=maxProduct(i+1,j,a,b); //make subsequence from next element of 1st array with rest of 2nd array
         int sp3=maxProduct(i,j+1,a,b); //make subsequence from next element of 2nd array with rest of 1st array
         return Math.max(sp1,Math.max(sp2,Math.max(sp3,a[i]*b[j])));
+//     Math.max(sp1,Math.max(sp2,sp3)) ke badle Math.max(sp1,Math.max(sp2,Math.max(sp3,a[i]*b[j])))
+//     and if(i==a.length || j==b.length)return 0; ke badle if(i==a.length || j==b.length)return -(int)1e9;
+//     isliye kia gya hai kyunki agar a[i]*b[j] -ve hota to pehle vaali statement max(sp1,sp2,sp3) return krti jo ki 0 hota isliye if condition me -(int)1e9 daala or
+//     return me max of (sp1,sp2,sp3,a[i]*b[j]) liya
     }
     public static int maxProductTD(int i,int j,int[] a,int[] b,Integer[][] dp){
         if(i==a.length || j==b.length){
