@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="initial version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DP/Fibonacci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/Fibonacci.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DP/Climbing_stairs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/Climbing_stairs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DP/Distinct_Subseq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/Distinct_Subseq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DP/buy_Candies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/buy_Candies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DP/edit_distance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DP/edit_distance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665385017666</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="initial version">
+      <created>1665416135253</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1665416135253</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

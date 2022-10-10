@@ -1,5 +1,6 @@
 package DP;
 //Question :- https://leetcode.com/problems/distinct-subsequences/
+//similar to edit distance
 public class Distinct_Subseq {
     public static void main(String[] args) {
         String s="rabbbit";

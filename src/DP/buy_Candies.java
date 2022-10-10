@@ -3,6 +3,8 @@ package DP;
 // of candy boxes.Medium boxes contain six candy bars and large boxes contains eight. Your task is to determine the
 // minimum no. of boxes you need to buy to get exactly N candy bars. If it is not possible to get exactly N candy bars,
 // then return -1.
+
+//similar to coin change
 public class buy_Candies {
     public static void main(String[] args) {
         int n=14;
