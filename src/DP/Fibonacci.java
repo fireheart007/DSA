@@ -2,10 +2,11 @@ package DP;
 
 public class Fibonacci {
     public static void main (String[] args) {
-        int n=0;
-        int[] dp=new int[n+1];
-        System.out.println(fibTD(n,dp));
+        int n=5;
+//        int[] dp=new int[n+1];
+//        System.out.println(fibTD(n,dp));
 //        System.out.println(fibBU(3));
+        System.out.println(fibSE(3));
     }
     public static int fibTD(int n , int[] dp)
     {
@@ -32,5 +33,19 @@ public class Fibonacci {
             dp[i]=sp1+sp2;
         }
         return dp[n];
+    }
+    public static int fibSE(int num) { //space efficient O(1) space complexity
+        int sp1 = 0, sp2 = 0;
+        for (int n = 0; n <= num; n++) {
+            if (n <= 1) {
+                sp1 = n - 1;
+                sp2 = n;
+                continue;
+            }
+            int temp = sp1;
+            sp1 = sp2;
+            sp2 = temp + sp1;
+        }
+        return sp2;
     }
 }
