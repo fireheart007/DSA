@@ -30,7 +30,7 @@ public class edit_distance {
             return Math.min(spI,Math.min(spD,spR))+1;
         }
     }
-    //Since we are converting the original string so we can't map these values in 2D array,so either store these value in
+    //Since we are converting the original string ,so we can't map these values in 2D array,so either store these value in
     //hashmap or divide the string virtually using idx so that we can store values corresponding to index in 2D dp array
 
     public static int minDistance2(String word1, String word2,int idx1,int idx2) {
@@ -68,7 +68,6 @@ public class edit_distance {
         if(word1.charAt(idx1)==word2.charAt(idx2))
         {
             dp[idx1][idx2]=minDistance2TD(word1,word2,idx1+1,idx2+1,dp);
-            return dp[idx1][idx2];
         }
         else
         {
@@ -79,8 +78,8 @@ public class edit_distance {
             //Replace
             int spR=minDistance2TD(word1,word2,idx1+1,idx2+1,dp);
             dp[idx1][idx2]=Math.min(spI,Math.min(spD,spR))+1;
-            return dp[idx1][idx2];
         }
+        return dp[idx1][idx2];
     }
 
     public static int minDistance2BU(String word1, String word2) {

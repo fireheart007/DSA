@@ -10,7 +10,7 @@ public class Distinct_Subseq {
     }
     public static int subseqTD(String str,int idx1,String t,int idx2,Integer[][] dp)
     {
-        if(idx2==t.length())
+        if(idx2==t.length()) //ye +ve B.C pehle likhna hai
             return 1;
         if(idx1==str.length())
             return 0;
@@ -21,13 +21,12 @@ public class Distinct_Subseq {
             int sp1=subseqTD(str, idx1+1, t, idx2+1,dp); //include call
             int sp2=subseqTD(str, idx1+1, t, idx2,dp); //exclude call
             dp[idx1][idx2]=sp1+sp2;
-            return sp1+sp2;
         }
         else
         {
             dp[idx1][idx2]=subseqTD(str, idx1+1, t, idx2,dp);
-            return dp[idx1][idx2];
         }
+        return dp[idx1][idx2];
     }
     public static int subseqBU(String str,String t)
     {

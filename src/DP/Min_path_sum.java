@@ -25,7 +25,7 @@ public class Min_path_sum {
             return dp[i][j];
         int sp1=minPathTD(arr,i+1,j,dp); //down jaake min path dhoondo
         int sp2=minPathTD(arr,i,j+1,dp); //right jaake min path dhoondo
-        dp[i][j]=Math.min(sp1,sp2) + arr[i][j];  //jo bhi path min. hai usme cureent element ki value add kr do
+        dp[i][j]=Math.min(sp1,sp2) + arr[i][j];  //jo bhi path min. hai usme current element ki value add kr do
         return dp[i][j];
     }
     public static int minPathBU(int[][] arr){
