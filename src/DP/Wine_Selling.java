@@ -60,7 +60,7 @@ public class Wine_Selling {
                 int sp1=0,sp2=0;
                 if(s+1<arr.length)
                     sp1=dp[s+1][e] + arr[s]*day;
-                if(e-1>0)
+                if(e-1>=0)
                     sp2=dp[s][e-1] + arr[e]*day;
                 dp[s][e]=Math.max(sp1,sp2);
             }
