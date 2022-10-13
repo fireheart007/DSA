@@ -32,14 +32,13 @@ public class LCS {
 
         if(str1.charAt(idx1)==str2.charAt(idx2)){
             dp[idx1][idx2]=lcstd(str1,str2,idx1+1,idx2+1,dp)+1;
-            return dp[idx1][idx2];
         }
         else{
             int sp1=lcstd(str1,str2,idx1+1,idx2,dp);
             int sp2=lcstd(str1,str2,idx1,idx2+1,dp);
             dp[idx1][idx2]=Math.max(sp1,sp2);
-            return dp[idx1][idx2];
         }
+        return dp[idx1][idx2];
     }
 
     public static int lcsbu(String str1, String str2){
