@@ -9,5 +9,8 @@ public class client {
         bt.Disp();
         System.out.println("The size of the tree is ");
         System.out.println(bt.size());
+        System.out.println(25+" is found in the tree or not : "+bt.find(25));
+        System.out.println("The height of tree is :"+ bt.height());
+        System.out.println("Max. distance b/w 2 nodes is: "+bt.dia());
     }
 }

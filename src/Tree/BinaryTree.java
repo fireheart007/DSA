@@ -10,10 +10,11 @@ public class BinaryTree {
         Node right;
         public Node(int i){
             data=i;
-        }
+        }  //Node Constructor for entering data in the node
     }
     Node root;
-    public BinaryTree(){
+    public BinaryTree(){ //Tree Constructor for creating tree
+
 //        root=create(null,false);   //using return node method
 
         System.out.println("Enter root node data"); //using void method
@@ -21,7 +22,7 @@ public class BinaryTree {
         create(root);
     }
 
-    public void create(Node parent) {
+    private void create(Node parent) {
         System.out.println(parent.data + " ka Left Child hein ");
         if (sc.nextBoolean()) {
             System.out.println(parent.data + " ka Left Child ka data de ");
@@ -71,9 +72,44 @@ public class BinaryTree {
             return 0;
         int left=size(n.left);
         int right=size(n.right);
-        return left+right+1;
+        return left+right+1; //add the size of left subtree and right subtree and add 1 to obtain the size from the root
     }
     public int size(){
         return size(root);
+    }
+
+    private boolean find(Node n ,int ele){
+        if(n==null)
+            return false;
+        if(ele==n.data)
+            return true;
+        boolean left=find(n.left,ele);
+        boolean right=find(n.right,ele);
+        return left||right;
+    }
+    public boolean find(int ele){
+        return find(root,ele);
+    }
+    private int height(Node n){
+        if(n==null)
+            return -1;
+        int left=height(n.left);
+        int right=height(n.right);
+        return Math.max(left,right) + 1;
+    }
+    public int height(){
+        return height(root);
+    }
+
+    private int dia(Node n){ //Diameter means max. distance b/w any 2 nodes in a tree
+        if(n==null)
+            return 0;
+        int ld=dia(n.left); //left dia
+        int rd=dia(n.right); //right dia
+        int sd= height(n.left)+ height(n.right) + 2; //self dia
+        return Math.max(sd,Math.max(ld,rd));
+    }
+    public int dia(){
+        return dia(root);
     }
 }
