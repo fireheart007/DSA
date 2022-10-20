@@ -90,7 +90,7 @@ public class BinaryTree {
     public boolean find(int ele){
         return find(root,ele);
     }
-    private int height(Node n){
+    private int height(Node n){ //height of a tree is the max. distance b/w its root node and leaf node
         if(n==null)
             return -1;
         int left=height(n.left);
@@ -101,6 +101,7 @@ public class BinaryTree {
         return height(root);
     }
 
+   //This approach have O(n^2) time complexity
     private int dia(Node n){ //Diameter means max. distance b/w any 2 nodes in a tree
         if(n==null)
             return 0;
@@ -111,5 +112,30 @@ public class BinaryTree {
     }
     public int dia(){
         return dia(root);
+    }
+
+//    Since the above function has 4 recursive calls and is traversing the whole tree 2 times - once for diameter and again for obtaining height, so we will make a
+//    class to return 2 things in a single function to reduce the complexity
+    class DiaHtPair{
+//    Diameter=0 and Height= -1 are the base cases for dia and height, so we have initialized these variables with them
+        int dia=0;
+        int ht=-1;
+    }
+
+//  Time Complexity of the below code is O(n)
+    private DiaHtPair dia2(Node n){ //here the return type of the function is "DiaHtPair", it will help us to return 2 values at once
+        if(n==null){
+            return new DiaHtPair(); //It will return ht= -1 and dia=0 for the null node
+        }
+        DiaHtPair L=dia2(n.left); //left dia
+        DiaHtPair R=dia2(n.right);//right dia
+        int sd= L.ht + R.ht +2; //self dia
+        DiaHtPair ans=new DiaHtPair(); //we have formed this object "ans" to store the final values of height and dia and return this object
+        ans.dia= Math.max(sd,Math.max(L.dia,R.dia));
+        ans.ht=Math.max(L.ht,R.ht)+1;
+        return ans;
+    }
+    public int dia2(){
+        return dia2(root).dia; //It will return the max. dia in the whole tree
     }
 }

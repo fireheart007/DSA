@@ -11,6 +11,8 @@ public class client {
         System.out.println(bt.size());
         System.out.println(25+" is found in the tree or not : "+bt.find(25));
         System.out.println("The height of tree is :"+ bt.height());
-        System.out.println("Max. distance b/w 2 nodes is: "+bt.dia());
+//        System.out.println("Max. distance b/w 2 nodes is: "+bt.dia()); // O(n^2) time complexity
+        System.out.println("Max. distance b/w 2 nodes is: "+bt.dia2()); //  O(n) time complexity
+
     }
 }
