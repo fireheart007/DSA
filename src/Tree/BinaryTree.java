@@ -114,8 +114,8 @@ public class BinaryTree {
         return dia(root);
     }
 
-//    Since the above function has 4 recursive calls and is traversing the whole tree 2 times - once for diameter and again for obtaining height, so we will make a
-//    class to return 2 things in a single function to reduce the complexity
+//  Since the above function has 4 recursive calls and is traversing the whole tree 2 times - once for diameter and again for obtaining height, so we will make a
+//  class to return 2 things in a single function to reduce the complexity
     class DiaHtPair{
 //    Diameter=0 and Height= -1 are the base cases for dia and height, so we have initialized these variables with them
         int dia=0;
@@ -137,5 +137,45 @@ public class BinaryTree {
     }
     public int dia2(){
         return dia2(root).dia; //It will return the max. dia in the whole tree
+    }
+
+//   The below code has O(n^2) time complexity
+    private boolean isBalanced(Node n){// A tree is balanced if |ht. of left subtree - ht. of right subtree| is <=1 for each node
+        if(n==null)
+            return true; //null node means it is balanced
+        boolean L=isBalanced(n.left);
+        boolean R=isBalanced(n.right);
+        if(L&&R){ //if both the left subtree and right subtree are balanced then only check the current node
+            int result=height(n.left)-height(n.right);
+            return Math.abs(result)<=1; //if |ht. left - ht. right| is <=1 then it will return true
+        }
+        return false; //agar koi ek bhi subtree balanced nhi hai to false return kar do
+    }
+    public boolean isBalanced(){
+        return isBalanced(root);
+    }
+
+//    O(n) time complexity code
+    class BoolHtPair{
+        boolean balanced=true;
+        int ht= -1;
+    }
+    private BoolHtPair isBalanced2(Node n){
+        if(n==null)
+            return new BoolHtPair();
+        BoolHtPair L=isBalanced2(n.left);
+        BoolHtPair R=isBalanced2(n.right);
+        BoolHtPair ans= new BoolHtPair();
+        if(L.balanced && R.balanced){
+            int result=L.ht-R.ht;
+            ans.balanced=Math.abs(result)<=1;
+        }
+        else
+            ans.balanced=false;
+        ans.ht=Math.max(L.ht,R.ht)+1;
+        return ans;
+    }
+    public boolean isBalanced2(){
+        return isBalanced2(root).balanced;
     }
 }
