@@ -180,9 +180,7 @@ public class BinaryTree {
     }
 
     //Given an array with preorder traversal, form the tree from it
-    public BinaryTree(int[] pre){
-        root=createPre(pre);
-    }
+
     int idx=0; //declaring idx globally to use in the below function, so that we can increment its value for traversing the array
     private Node createPre(int[] pre) {
         if(pre[idx]==-1){
@@ -195,11 +193,12 @@ public class BinaryTree {
         n.right=createPre(pre);
         return n;
     }
+    public BinaryTree(int[] pre){
+        root=createPre(pre);
+    }
 
     //Given preorder and inorder traversal create the binary tree
-    public BinaryTree(int[] pre, int[] in){
-        root=createPreIn(pre,0,pre.length-1,in,0,in.length-1);
-    }
+
     private Node createPreIn(int[] pre, int preS, int preE, int[] in, int inS, int inE) {
         if(preS>preE || inS>inE) //agar index out of bound ho to null return kr do
             return null;
@@ -215,5 +214,8 @@ public class BinaryTree {
         n.left=createPreIn(pre,preS+1,preS+left_size,in,inS,idx-1); //root node ka left subtree banao
         n.right=createPreIn(pre,preS+left_size+1,preE,in,idx+1,inE); //root node ka left subtree banao
         return n;
+    }
+    public BinaryTree(int[] pre, int[] in){
+        root=createPreIn(pre,0,pre.length-1,in,0,in.length-1);
     }
 }
