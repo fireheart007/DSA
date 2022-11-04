@@ -25,8 +25,14 @@ public class client {
 //        bt.Disp();
 
 //        Given preorder and inorder traversal create the binary tree
-        int[] pre={10,20,30,50,40,60};
-        int[] in={30,20,50,10,40,60};
-        BinaryTree bt=new BinaryTree(pre,in);
+//        int[] pre={10,20,30,50,40,60};
+//        int[] in={30,20,50,10,40,60};
+//        BinaryTree bt=new BinaryTree(pre,in);
+
+        //Printing level order of the tree
+        BinaryTree bt=new BinaryTree();
+        System.out.println("Level order of the tree is :-");
+//        bt.level();
+        bt.levelNextLn(); //level order traversal such that print nodes in next line at each level
     }
 }

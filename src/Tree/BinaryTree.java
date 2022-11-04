@@ -1,5 +1,7 @@
 package Tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class BinaryTree {
@@ -217,5 +219,40 @@ public class BinaryTree {
     }
     public BinaryTree(int[] pre, int[] in){
         root=createPreIn(pre,0,pre.length-1,in,0,in.length-1);
+    }
+
+    //Level Order Traversal
+    public void level(){
+        Queue<Node> Q=new LinkedList<>();
+        Q.add(root);
+        while(!Q.isEmpty()){
+            Node n=Q.poll(); //Q ka first element nikalo or node 'n' me daalo
+            System.out.println(n.data);
+            if(n.left!=null) //agar ka node ka left child 'null' nhi hai to use Q me add kro
+                Q.add(n.left);
+            if(n.right!=null) //agar ka node ka right child 'null' nhi hai to use Q me add kro
+                Q.add(n.right);
+        }
+    }
+
+    //level order traversal such that print nodes in next line at each level
+    public void levelNextLn(){
+        Queue<Node> Q=new LinkedList<>();
+        Q.add(root);
+        while(true){
+            int nodeCount=Q.size();
+            while(nodeCount>0){
+                Node n=Q.poll();
+                System.out.print(n.data+" ");
+                if(n.left!=null)
+                    Q.add(n.left);
+                if(n.right!=null)
+                    Q.add(n.right);
+                nodeCount--;
+            }
+            System.out.println();
+            if(Q.isEmpty())
+                break;
+        }
     }
 }
