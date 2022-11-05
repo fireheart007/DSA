@@ -29,10 +29,14 @@ public class client {
 //        int[] in={30,20,50,10,40,60};
 //        BinaryTree bt=new BinaryTree(pre,in);
 
-        //Printing level order of the tree
+        //Printing level order of the tree :-
         BinaryTree bt=new BinaryTree();
-        System.out.println("Level order of the tree is :-");
+//        System.out.println("Level order of the tree is :-");
 //        bt.level();
-        bt.levelNextLn(); //level order traversal such that print nodes in next line at each level
+//        bt.levelNextLn(); //level order traversal such that print nodes in next line at each level
+//        bt.levelNextLn2();  //level order traversal such that print nodes in next line at each level - 2nd approach
+
+        System.out.println("Reverse Level order of the tree is :-");
+        bt.reverseLvl();
     }
 }

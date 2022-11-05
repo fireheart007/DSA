@@ -3,6 +3,7 @@ package Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
 
 public class BinaryTree {
     Scanner sc =new Scanner(System.in); //declared globally because scanner should be declared only once in a class
@@ -200,7 +201,6 @@ public class BinaryTree {
     }
 
     //Given preorder and inorder traversal create the binary tree
-
     private Node createPreIn(int[] pre, int preS, int preE, int[] in, int inS, int inE) {
         if(preS>preE || inS>inE) //agar index out of bound ho to null return kr do
             return null;
@@ -235,7 +235,9 @@ public class BinaryTree {
         }
     }
 
-    //level order traversal such that print nodes in next line at each level
+//    level order traversal such that print nodes in next line at each level
+
+//    Approach 1st:- time complexity O(n), using single queue
     public void levelNextLn(){
         Queue<Node> Q=new LinkedList<>();
         Q.add(root);
@@ -255,4 +257,55 @@ public class BinaryTree {
                 break;
         }
     }
+
+//    Approach 2nd:- Using 2 queues
+    public void levelNextLn2(){
+        Queue<Node> currLvl = new LinkedList<>();
+        Queue<Node> nextLvl = new LinkedList<>();
+        currLvl.add(root);
+        while(!currLvl.isEmpty()){
+            Node n=currLvl.poll();
+            System.out.print(n.data+" ");
+            if(n.left!=null)
+                nextLvl.add(n.left);
+            if(n.right!=null)
+                nextLvl.add(n.right);
+            if(currLvl.isEmpty()){ //currlvl is finished --> move to next level
+                System.out.println(); //change the line
+                currLvl=nextLvl;
+//            Now, currlvl equals to nextlvl, so we have to make nextlvl again using "new" keyword otherwise the address of both currlvl and nextlvl would be same
+                nextLvl=new LinkedList<>();
+                //now previous nextlvl is removed automatically after creating new one due to garbage collector
+            }
+        }
+    }
+
+    //Reverse Level Order
+    public void reverseLvl(){
+        Queue<Node> Q=new LinkedList<>();
+        Stack<Node> S=new Stack<>();
+        Q.add(root);
+        while(!Q.isEmpty()){
+            Node n=Q.poll();
+            S.push(n); //instead of printing like level order put the node in stack because it follows LIFO, so it will print in reverse order
+
+//          To get the correct sequence (left to right at every level) --> Right subtree is visited before left subtree because in stack when left child will
+//          be added at last, so it will print it first which will maintain the level order
+//          If we don't do this then for tree :-                         7
+//                                                               8              9
+//                                                          12      11              5
+//          we will print reverse level order 5,11,12,9,8,7 instead of 12,11,5,8,9,7
+            if(n.right!=null)
+                Q.add(n.right);
+            if(n.left!=null)
+                Q.add(n.left);
+        }
+
+//        printing the nodes :-
+        while(!S.isEmpty()){
+            Node n=S.pop();
+            System.out.println(n.data);
+        }
+    }
+
 }
