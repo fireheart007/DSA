@@ -93,6 +93,7 @@ public class BinaryTree {
     public boolean find(int ele){
         return find(root,ele);
     }
+
     private int height(Node n){ //height of a tree is the max. distance b/w its root node and leaf node
         if(n==null)
             return -1;
@@ -329,6 +330,40 @@ public class BinaryTree {
             }
             idx++; //next element pe jaane ke liye index increment kro
         }
+    }
+
+//    Finding if 2 trees are equivalent or not
+    public boolean equivalent(Node root1, Node root2){
+        if(root1==null && root2==null) //agar dono tree empty hai then return true
+            return true;
+        if(root1==null || root2==null) //agar dono me se sirf ek tree empty hai then return false
+            return false;
+        boolean L=equivalent(root1.left, root2.left);
+        boolean R=equivalent(root1.right,root2.right);
+        return L && R && root1.data==root2.data;//Agar left & right subtree dono tree ke equal hai & dono tree ke root bhi same hai to return true otherwise false
+    }
+
+//    Finding if 2 trees are flip equivalent or not
+//    https://leetcode.com/problems/flip-equivalent-binary-trees/description/
+    public boolean flipEquiv(Node root1, Node root2) {
+        if(root1==null && root2==null) //agar dono tree empty hai then return true
+            return true;
+        if(root1==null || root2==null) //agar dono me se sirf ek tree empty hai then return false
+            return false;
+
+        if(root1.data==root2.data){ //agar dono tree ke roots equal hai to flip and noflip ki conditions check kro
+
+//            har node ke pass 2 choices hai, vo flip ho ya na ho
+//            agar nodes flip nhi hai to dono tree ke nodes ke left subchild and right subchild equal hone chahiye
+            boolean noflip= flipEquiv(root1.left, root2.left) && flipEquiv(root1.right,root2.right);
+
+//   agar nodes flip hai to tree1 ke node ka left subchild == tree2 ke node ka right subchild and tree1 ke node ka right subchild == tree2 ke node ka left subchild
+            boolean flip= flipEquiv(root1.left,root2.right) && flipEquiv(root1.right, root2.left);
+
+            return noflip||flip; //agar nodes equal hai flip ya noflip then return true
+        }
+        else //agar dono tree ke roots equal nhi hai to false return kro
+            return false;
     }
 
 }

@@ -30,7 +30,7 @@ public class client {
 //        BinaryTree bt=new BinaryTree(pre,in);
 
         //Printing level order of the tree :-
-        BinaryTree bt=new BinaryTree();
+//        BinaryTree bt=new BinaryTree();
 //        System.out.println("Level order of the tree is :-");
 //        bt.level();
 //        bt.levelNextLn(); //level order traversal such that print nodes in next line at each level
@@ -40,8 +40,22 @@ public class client {
 //        bt.reverseLvl();
 
         // Creating binary tree from given level order
-        int[] lvl= {7,8,9,12,11,-1,5,-1,-1,-1,-1,-1,-1};
-        bt.createLvl(lvl);
-        bt.Disp();
+//        int[] lvl= {7,8,9,12,11,-1,5,-1,-1,-1,-1,-1,-1};
+//        bt.createLvl(lvl);
+//        bt.Disp();
+
+//        Finding if 2 trees are equivalent or not
+//        int[] pre1={7,8,12,-1,-1,11,-1,-1,9,-1,5,-1,-1};
+//        BinaryTree bt1=new BinaryTree(pre1);
+//        int[] pre2={10,20,30,-1,-1,50,-1,-1,40,60,-1,-1,-1};
+//        BinaryTree bt2=new BinaryTree(pre2);
+//        System.out.println(bt1.equivalent(bt1.root, bt2.root));
+
+//        Finding if 2 trees are flip equivalent or not
+        int[] pre1={7,8,12,-1,-1,11,-1,-1,9,-1,5,-1,-1};
+        BinaryTree bt1=new BinaryTree(pre1);
+        int[] pre2={7,9,-1,5,-1,-1,8,12,-1,-1,11,-1,-1};
+        BinaryTree bt2=new BinaryTree(pre2);
+        System.out.println(bt1.flipEquiv(bt1.root, bt2.root));
     }
 }
