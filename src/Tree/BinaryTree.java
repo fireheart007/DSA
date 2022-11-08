@@ -308,4 +308,27 @@ public class BinaryTree {
         }
     }
 
+//    Create the binary tree from given level order traversal in an array
+    public void createLvl(int[] lvl){
+        root=new Node(lvl[0]);
+        int idx=1;
+        Queue<Node> Q=new LinkedList<>();
+        Q.add(root);
+        while(!Q.isEmpty()){
+            Node n=Q.poll();
+            if(lvl[idx]!=-1){ //agar next element null nhi hai to tree ka left child banao
+                Node L=new Node(lvl[idx]);
+                n.left=L;
+                Q.add(L);
+            }
+            idx++; //next element pe jaane ke liye index increment kro
+            if(lvl[idx]!=-1){ //agar next element null nhi hai to tree ka right child banao
+                Node R=new Node(lvl[idx]);
+                n.right=R;
+                Q.add(R);
+            }
+            idx++; //next element pe jaane ke liye index increment kro
+        }
+    }
+
 }

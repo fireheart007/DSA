@@ -36,7 +36,12 @@ public class client {
 //        bt.levelNextLn(); //level order traversal such that print nodes in next line at each level
 //        bt.levelNextLn2();  //level order traversal such that print nodes in next line at each level - 2nd approach
 
-        System.out.println("Reverse Level order of the tree is :-");
-        bt.reverseLvl();
+//        System.out.println("Reverse Level order of the tree is :-");
+//        bt.reverseLvl();
+
+        // Creating binary tree from given level order
+        int[] lvl= {7,8,9,12,11,-1,5,-1,-1,-1,-1,-1,-1};
+        bt.createLvl(lvl);
+        bt.Disp();
     }
 }
