@@ -3,36 +3,35 @@ import Tree.BinaryTree;
 import java.util.*;
 public class practice {
     public static void main(String[] args) {
-//        class NodelvlPair{
-//            BinaryTree.Node node;
-//            int level;
-//            public NodelvlPair(BinaryTree.Node nn, int l){
-//                node=nn;
-//                level=l;
-//            }
-//        }
-//        public void levelNextln(){
-//            Queue<NodelvlPair> Q=new LinkedList<>();
-//            Q.add(new NodelvlPair(root,0));
-//            int curr=0,next=0;
-//            while(!Q.isEmpty()){
-//                NodelvlPair n=Q.poll(); //Q ka first element nikalo or node 'n' me daalo
-//                curr=n.level;
-//                System.out.print(n.node.data+" ");
-//                if(curr!=next)
-//                    System.out.println();
-//                if(n.node.left!=null) { //agar ka node ka left child 'null' nhi hai to use Q me add kro
-//                    Q.add(new NodelvlPair(n.node.left, n.level + 1));
-//                    next=n.level+1;
+//        private TreeNode remove(TreeNode nn, int aloo) {
+//            if(nn==null)
+//                return nn;
+//            if (nn.val > aloo) {
+//                nn.left = remove(nn.left, aloo);
+//            } else if (nn.val < aloo) {
+//                nn.right = remove(nn.right, aloo);
+//            } else {
+////			case 1: aloo is leaf Node!!
+//                if (nn.left == null && nn.right == null) {
+//                    return null;
 //                }
-//                if(n.node.right!=null) {//agar ka node ka right child 'null' nhi hai to use Q me add kro
-//                    Q.add(new NodelvlPair(n.node.right, n.level + 1));
-//                    next=n.level+1;
+////			case 2: aloo has only a single child!!
+//                if (nn.left == null && nn.right != null) {
+//                    return nn.right;
 //                }
-//
-////            if(n.node.left!=null || n.node.right!=null)
-////                curr=next;
+//                if (nn.left != null && nn.right == null) {
+//                    return nn.left;
+//                }
+////			case 3: has both children!!
+//                if (nn.left != null && nn.right != null) {
+////				update nn.data to left sub tree ka max ya fir
+////				right sub tree ka min!!
+//                    int max = Max(nn.left);
+//                    nn.val = max;
+//                    nn.left = remove(nn.left, max);
+//                }
 //            }
+//            return nn;
 //        }
     }
 }

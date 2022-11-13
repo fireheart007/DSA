@@ -221,6 +221,8 @@ public class BinaryTree {
     public BinaryTree(int[] pre, int[] in){
         root=createPreIn(pre,0,pre.length-1,in,0,in.length-1);
     }
+//    Similarly we can make tree if postorder and inorder traversal is given,but we can't make tree if preorder and postorder are given only because then we can't
+//    identify the size of left and right subtree
 
     //Level Order Traversal
     public void level(){
