@@ -59,9 +59,15 @@ public class client {
 //        System.out.println(bt1.flipEquiv(bt1.root, bt2.root));
 
         // Check if given Binary Tree is BST or not
-        int[] pre={60,10,7,-1,-1,30,-1,-1,70,65,-1,-1,90,-1,-1};
+//        int[] pre={60,10,7,-1,-1,30,-1,-1,70,65,-1,-1,90,-1,-1};
+//        BinaryTree bt=new BinaryTree(pre);
+////        System.out.println(bt.isBST());  //o(n^2) time complexity
+//        System.out.println(bt.isBST2());  //o(n) time complexity
+
+        //Find the size of biggest BST present in the given Binary Tree
+        int[] pre={10,20,30,-1,-1,50,-1,-1,40,60,-1,-1,-1};
         BinaryTree bt=new BinaryTree(pre);
-//        System.out.println(bt.isBST());  //o(n^2) time complexity
-        System.out.println(bt.isBST2());  //o(n) time complexity
+//        System.out.println(bt.BiggestBST());
+        System.out.println(bt.BiggestBST2());
     }
 }

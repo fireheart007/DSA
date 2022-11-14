@@ -434,4 +434,54 @@ public class BinaryTree {
     public boolean isBST2(){
         return isBST2(root).isBST;
     }
+
+//    Find the size of biggest BST present in the given Binary Tree
+
+//    O(n^2) time complexity approach:-
+    private int BiggestBST(Node n){
+        if(n==null)
+            return 0;
+        if(isBST(n)) //agar current node se poora tree BST hai to
+            return size(n); //uska size return kr do
+
+        int L=BiggestBST(n.left); //varna left subtree me bigggest BST dhoondo
+        int R=BiggestBST(n.right); //and right subtree me bigggest BST dhoondo
+        return Math.max(L,R); //dono me se jiska size bada ho vo return kr do
+    }
+    public int BiggestBST(){
+        return BiggestBST(root);
+    }
+
+//    O(n) time complexity approach :-
+    class BiggestBSTpair{
+        boolean isBST=true;
+        int BiggestBST=0;
+        int max=Integer.MIN_VALUE;
+        int min=Integer.MAX_VALUE;
+    }
+    private BiggestBSTpair BiggestBST2(Node n){
+        if(n==null)
+            return new BiggestBSTpair();
+
+        BiggestBSTpair L=BiggestBST2(n.left);
+        BiggestBSTpair R=BiggestBST2(n.right);
+        BiggestBSTpair ans=new BiggestBSTpair();
+        ans.min=Math.min(n.data,Math.min(L.min,R.min));
+        ans.max=Math.max(n.data,Math.max(L.max,R.max));
+        if(L.max<=n.data && R.min>n.data){
+            ans.isBST= L.isBST && R.isBST;
+        }
+        else
+            ans.isBST=false;
+
+        if(ans.isBST)
+            ans.BiggestBST=L.BiggestBST+R.BiggestBST+1;
+        else
+            ans.BiggestBST= Math.max(L.BiggestBST,R.BiggestBST);
+
+        return ans;
+    }
+    public int BiggestBST2(){
+        return BiggestBST2(root).BiggestBST;
+    }
 }
