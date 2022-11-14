@@ -94,6 +94,28 @@ public class BinaryTree {
         return find(root,ele);
     }
 
+    private int max(Node n){
+        if(n==null)
+            return Integer.MIN_VALUE;
+        int L=max(n.left);
+        int R=max(n.right);
+        return Math.max(n.data,Math.max(L,R));
+    }
+    public int max(){
+        return max(root);
+    }
+
+    private int min(Node n){
+        if(n==null)
+            return Integer.MAX_VALUE;
+        int L=min(n.left);
+        int R=min(n.right);
+        return Math.min(n.data,Math.min(L,R));
+    }
+    public int min(){
+        return min(root);
+    }
+
     private int height(Node n){ //height of a tree is the max. distance b/w its root node and leaf node
         if(n==null)
             return -1;
@@ -368,4 +390,48 @@ public class BinaryTree {
             return false;
     }
 
+//    Check if the given binary tree is BST
+
+//    O(n^2) time complexity approach:-
+    private boolean isBST(Node n){ //here there are 4 recursive calls
+        if(n==null)
+            return true;
+        if(max(n.left)<=n.data && min(n.right)>n.data){
+            boolean L= isBST(n.left);
+            boolean R= isBST(n.right);
+            return L&&R;
+        }
+        return false;
+    }
+    public boolean isBST(){
+        return isBST(root);
+    }
+
+//    O(n) time complexity approach :-
+    class isBSTpair{
+        boolean isBST=true;
+        int min=Integer.MAX_VALUE;
+        int max=Integer.MIN_VALUE;
+    }
+    private isBSTpair isBST2(Node n){
+        if(n==null)
+            return new isBSTpair();
+
+        isBSTpair L=isBST2(n.left);
+        isBSTpair R=isBST2(n.right);
+        isBSTpair ans=new isBSTpair();
+        ans.min=Math.min(n.data,Math.min(L.min,R.min));
+        ans.max=Math.max(n.data,Math.max(L.max,R.max));
+
+        if(L.max<=n.data && R.min>n.data){
+            ans.isBST= L.isBST && R.isBST;
+        }
+        else
+            ans.isBST=false;
+
+        return ans;
+    }
+    public boolean isBST2(){
+        return isBST2(root).isBST;
+    }
 }

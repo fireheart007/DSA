@@ -44,18 +44,24 @@ public class client {
 //        bt.createLvl(lvl);
 //        bt.Disp();
 
-//        Finding if 2 trees are equivalent or not
+        // Finding if 2 trees are equivalent or not
 //        int[] pre1={7,8,12,-1,-1,11,-1,-1,9,-1,5,-1,-1};
 //        BinaryTree bt1=new BinaryTree(pre1);
 //        int[] pre2={10,20,30,-1,-1,50,-1,-1,40,60,-1,-1,-1};
 //        BinaryTree bt2=new BinaryTree(pre2);
 //        System.out.println(bt1.equivalent(bt1.root, bt2.root));
 
-//        Finding if 2 trees are flip equivalent or not
-        int[] pre1={7,8,12,-1,-1,11,-1,-1,9,-1,5,-1,-1};
-        BinaryTree bt1=new BinaryTree(pre1);
-        int[] pre2={7,9,-1,5,-1,-1,8,12,-1,-1,11,-1,-1};
-        BinaryTree bt2=new BinaryTree(pre2);
-        System.out.println(bt1.flipEquiv(bt1.root, bt2.root));
+        // Finding if 2 trees are flip equivalent or not
+//        int[] pre1={7,8,12,-1,-1,11,-1,-1,9,-1,5,-1,-1};
+//        BinaryTree bt1=new BinaryTree(pre1);
+//        int[] pre2={7,9,-1,5,-1,-1,8,12,-1,-1,11,-1,-1};
+//        BinaryTree bt2=new BinaryTree(pre2);
+//        System.out.println(bt1.flipEquiv(bt1.root, bt2.root));
+
+        // Check if given Binary Tree is BST or not
+        int[] pre={60,10,7,-1,-1,30,-1,-1,70,65,-1,-1,90,-1,-1};
+        BinaryTree bt=new BinaryTree(pre);
+//        System.out.println(bt.isBST());  //o(n^2) time complexity
+        System.out.println(bt.isBST2());  //o(n) time complexity
     }
 }
