@@ -2,7 +2,7 @@ package Tree;
 //                      7
 //               8              9
 //          12      11              5
-public class client {
+public class client1 {
     public static void main(String[] args) {
 //        Input Copy :-
 //        7 true 8 true 12 false false true 11 false false true 9 false true 5 false false
