@@ -15,6 +15,18 @@ public class Leetcode_BinaryTree {
     }
     TreeNode root;
 
+    //Pathsum  O(n) Time complexity
+    //https://leetcode.com/problems/path-sum/description/
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if(root==null) //this condition will be written first
+            return false;
+        if(root.left==null && root.right==null && targetSum-root.val==0) //leaf node condition
+            return true;
+        boolean l=hasPathSum(root.left,targetSum-root.val);
+        boolean r=hasPathSum(root.right,targetSum-root.val);
+        return l||r; //agar kisi ek se bhi path find ho rha hai to true return kr do
+    }
+
     //PathSum-II  O(n) Time complexity
     //https://leetcode.com/problems/path-sum-ii/description/
     public void pathSum2(TreeNode root, int target, List<Integer> al, List<List<Integer>> ans){
@@ -38,7 +50,7 @@ public class Leetcode_BinaryTree {
         return ans;
     }
 
-    //PathSum-III 0(n^2) Time complexity , can be done in O(n) using Hashmap
+    //PathSum-III O(n^2) Time complexity , can be done in O(n) using Hashmap
     //https://leetcode.com/problems/path-sum-iii/description/
     int count=0;
     public int pathSum(TreeNode root, int targetSum) { //the logic of the below code is like word search problem
