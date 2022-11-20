@@ -32,7 +32,7 @@ public class Leetcode_BinaryTree {
         pathSum2(root.right,target-root.val,al,ans); //right
         al.remove(al.size()-1); //explicit backtracking
     }
-    public List<List<Integer>> pathSum2(int targetSum) {
+    public List<List<Integer>> pathSum2(TreeNode root,int targetSum) {
         List<List<Integer>> ans=new ArrayList<>();
         pathSum2(root,targetSum,new ArrayList<>(),ans);
         return ans;
