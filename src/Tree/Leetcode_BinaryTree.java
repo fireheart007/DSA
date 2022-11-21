@@ -111,7 +111,7 @@ public class Leetcode_BinaryTree {
         int dia=0;
         int ht=-1;
     }
-    public DiaHtPair dia(TreeNode n){
+    public DiaHtPair dia(TreeNode n){ //O(n) tc
         if(n==null)
             return new DiaHtPair();
         DiaHtPair L=dia(n.left);
@@ -126,4 +126,27 @@ public class Leetcode_BinaryTree {
         return dia(root).dia;
     }
 
+    //Binary Tree Maximum Path Sum - O(n) tc
+    //https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
+    int res=Integer.MIN_VALUE; //declaring global variable
+    public int maxPathSum(TreeNode root) {
+        maxpath(root);
+        return res;
+    }
+    public int maxpath(TreeNode n){
+        if(n==null)
+            return 0;
+        int l=maxpath(n.left);
+        int r=maxpath(n.right);
+
+        //Case 1 :- Current node is lying in b/w the path of maxpath
+        int max_straight=Math.max(Math.max(l,r)+n.val,n.val); //return the max b/w the max left or right path and the current node
+        //Case 2:- Current node is acting as the root of maxpath i.e. self dia
+        int max_path=Math.max(l+r+n.val,max_straight);//return max b/w self dia and max straight path , Case 2&1 compared
+
+        res=Math.max(max_path,res); //return tha max b/w the current max path and previous max path
+
+        //here we will not return res because it is not the straight path, so we can't use it otherwise l and r will not store the straight path which will be wrong
+        return max_straight;
+    }
 }
