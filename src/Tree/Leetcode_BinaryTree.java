@@ -89,4 +89,41 @@ public class Leetcode_BinaryTree {
         return l+r; //poore tree ka sum
     }
 
+    //Diameter of Binary Tree
+    //https://leetcode.com/problems/diameter-of-binary-tree/description/
+    public int diameterOfBinaryTree(TreeNode root) { //O(n^2) tc
+        if(root==null)
+            return 0;
+        int sd=ht(root.left)+ht(root.right)+2;
+        int ld=diameterOfBinaryTree(root.left);
+        int rd=diameterOfBinaryTree(root.right);
+        return Math.max(sd,Math.max(ld,rd));
+    }
+    public int ht(TreeNode n){
+        if(n==null)
+            return -1;
+        int l=ht(n.left);
+        int r=ht(n.right);
+        return Math.max(l,r)+1;
+    }
+    //O(n) tc
+    class DiaHtPair{
+        int dia=0;
+        int ht=-1;
+    }
+    public DiaHtPair dia(TreeNode n){
+        if(n==null)
+            return new DiaHtPair();
+        DiaHtPair L=dia(n.left);
+        DiaHtPair R=dia(n.right);
+        int sd=L.ht + R.ht +2;
+        DiaHtPair ans=new DiaHtPair();
+        ans.dia=Math.max(sd,Math.max(L.dia,R.dia));
+        ans.ht=Math.max(L.ht,R.ht) +1;
+        return ans;
+    }
+    public int diameterOfBT(TreeNode root){
+        return dia(root).dia;
+    }
+
 }
