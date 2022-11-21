@@ -56,9 +56,9 @@ public class Leetcode_BinaryTree {
     public int pathSum(TreeNode root, int targetSum) { //the logic of the below code is like word search problem
         if(root==null)
             return 0;
-        pathSum3(root,targetSum); //root se start kro or target sum find kro
-        pathSum(root.left,targetSum); //left subtree se start kro or target sum dhoondo
-        pathSum(root.right,targetSum); //right subtree se start kro or target sum dhoondo
+        pathSum3(root,targetSum); //target sum find kro
+        pathSum(root.left,targetSum); //tree ke left node se start kro
+        pathSum(root.right,targetSum); //tree ke right node se start kro
         return count;
     }
 //    root=[1000000000,1000000000,null,294967296,null,1000000000,null,1000000000,null,1000000000]
@@ -72,6 +72,21 @@ public class Leetcode_BinaryTree {
             count++;
         pathSum3(n.left,targetSum); //left subtree me targetsum find kro
         pathSum3(n.right,targetSum); //right subtree me targetsum find kro
+    }
+
+    // Sum Root to Leaf Numbers
+    //https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
+    public int sumNumbers(TreeNode root) {
+        return sum(root,0);
+    }
+    public int sum(TreeNode n,int sol){
+        if(n==null)
+            return 0;
+        if(n.left==null && n.right==null) //leaf node condition
+            return sol*10+n.val;
+        int l=sum(n.left,sol*10+n.val); //left subtree ka sum
+        int r=sum(n.right,sol*10+n.val); //right subtree ka sum
+        return l+r; //poore tree ka sum
     }
 
 }
