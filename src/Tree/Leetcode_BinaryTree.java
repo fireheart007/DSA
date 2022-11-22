@@ -150,7 +150,7 @@ public class Leetcode_BinaryTree {
         return max_straight;
     }
 
-    //Balanced Binary Tree - O(n) tc can be implemented using class logic
+    //Balanced Binary Tree -     O(n) tc can be implemented using class logic
     //https://leetcode.com/problems/balanced-binary-tree/description/
     public boolean balanced(TreeNode n){ //O(n^2) tc
         if(n==null)
@@ -162,4 +162,24 @@ public class Leetcode_BinaryTree {
         }
         return false;
     }
+
+    // Lowest Common Ancestor of a Binary Tree - O(n) tc
+    //https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root==null)
+            return null;
+        if(root==p || root==q) //agar current node hi p ya q hai to vo hi lca hai
+            return root;
+        TreeNode l=lowestCommonAncestor(root.left,p,q);
+        TreeNode r=lowestCommonAncestor(root.right,p,q);
+
+        if(l!=null && r!=null) // Case 1-agar p and q current node ke left and right child hai then current node is lca
+            return root;
+        else if(l!=null && r==null) //Case 2- agar p and q dono left subtree me hai then l will return lca of p and q in left subtree
+            return l;
+        else //Case 3-agar p and q dono right subree me hai then r will return lca of p and q in right subtree
+            return r;
+
+    }
+
 }
