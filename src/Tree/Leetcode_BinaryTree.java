@@ -74,7 +74,7 @@ public class Leetcode_BinaryTree {
         pathSum3(n.right,targetSum); //right subtree me targetsum find kro
     }
 
-    // Sum Root to Leaf Numbers
+    // Sum Root to Leaf Numbers - O(n) tc
     //https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
     public int sumNumbers(TreeNode root) {
         return sum(root,0);
@@ -148,5 +148,18 @@ public class Leetcode_BinaryTree {
 
         //here we will not return res because it is not the straight path, so we can't use it otherwise l and r will not store the straight path which will be wrong
         return max_straight;
+    }
+
+    //Balanced Binary Tree - O(n) tc can be implemented using class logic
+    //https://leetcode.com/problems/balanced-binary-tree/description/
+    public boolean balanced(TreeNode n){ //O(n^2) tc
+        if(n==null)
+            return true;
+        if(Math.abs(ht(n.left)-ht(n.right))<=1){
+            boolean l= balanced(n.left);
+            boolean r= balanced(n.right);
+            return l&&r;
+        }
+        return false;
     }
 }
