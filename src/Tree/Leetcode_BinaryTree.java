@@ -182,4 +182,77 @@ public class Leetcode_BinaryTree {
 
     }
 
+    //LCA 2 - O(n) tc  --> here we are given that if either a or b not exist then return null
+    //https://www.lintcode.com/problem/474/
+    public TreeNode lowestCommonAncestorII(TreeNode root, TreeNode A, TreeNode B) {
+        if(exist(root,A) && exist(root,B)) //if both the nodes a & b exist in the tree then only find the lca
+            return lowestCommonAncestor(root,A,B);
+        return null; //else return null
+    }
+    public boolean exist(TreeNode n,TreeNode ele){
+        if(n==null)
+            return false;
+        if(n==ele)
+            return true;
+        boolean l=exist(n.left,ele);
+        boolean r=exist(n.right,ele);
+        return l||r;
+    }
+
+    //LCA 3 - The node structure of a binary tree is modified such that each node has the reference to its parent node.
+    //You are given two nodes: 'N1' and 'N2' of the above binary tree. Your task is to return the lca of the given node
+    //https://www.codingninjas.com/codestudio/problems/lowest-common-ancestor-of-a-binary-tree-iii_1280134
+
+    class BinaryTreeNode {
+        int data;
+        BinaryTreeNode left;
+        BinaryTreeNode right;
+        BinaryTreeNode parent;
+        BinaryTreeNode(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+            parent = null;
+        }
+    } //for the code reference
+
+    //Approach 1- O(n) tc and O(n) Space Complexity
+    public static BinaryTreeNode lowestCommonAncestor(BinaryTreeNode n1, BinaryTreeNode n2) {
+
+        HashSet<Integer> hashSet = new HashSet<>();
+
+        // Storing all ancestors of n1 in a hashset
+        while (n1 != null) {
+            hashSet.add(n1.data);
+            n1 = n1.parent;
+        }
+        //checking in hashset that which node is common in b/w ancestors of n1 and n2
+        //The first node to be found in the hash set will be LCA of ‘n1’ and ‘n2’
+        while (n2 != null) {
+            if (hashSet.contains(n2.data)) { //this operation runs in O(1) tc
+                return n2;
+            }
+            n2 = n2.parent;
+        }
+        return null; //if both n1 and n2 don't exist then return null
+    }
+    //Approach 2- O(n) tc and O(1) Space Complexity -> more efficient
+    public static BinaryTreeNode lowestCommonAncestor3(BinaryTreeNode n1, BinaryTreeNode n2) {
+        //making copy of both the nodes ,so we can iterate them without changing values of original nodes
+        BinaryTreeNode copy1=n1;
+        BinaryTreeNode copy2=n2;
+        while(copy1!=copy2){ //while node 1 is not equal to node 2 we will run the loop
+            if(copy1!=null) //if node 1 is not null
+                copy1=copy1.parent; //go to its parent
+            else
+                copy1=n2; //if copy1 is null then make it equal to node 2
+            if(copy2!=null) //if node 2 is not null
+                copy2=copy2.parent; //go to its parent
+            else
+                copy2=n1; //if copy2 is null then make it equal to node 1
+        }
+        return copy1; //return either copy1 or copy2 because both will be equal now
+    }
+    //if node is null then make it equal to the other node --> this approach will help us to equalise the distance travelled from both the nodes so that we can
+    //reach the common node on both the copy1 and copy2 at the same time
 }
