@@ -255,4 +255,27 @@ public class Leetcode_BinaryTree {
     }
     //if node is null then make it equal to the other node --> this approach will help us to equalise the distance travelled from both the nodes so that we can
     //reach the common node on both the copy1 and copy2 at the same time
+
+    //LCA 4 - given root of binary tree and an array of nodes, return lca of all the nodes - O(n) tc
+    public TreeNode lowestCommonAncestor4(TreeNode root, TreeNode[] arr){
+        HashSet<TreeNode>  hashSet=new HashSet<>();
+        Collections.addAll(hashSet, arr); //copy the whole array to the hashset,so we can iterate through it in O(1) tc --> this operation will take O(n) tc
+        return lca4(root,hashSet);
+    }
+    public TreeNode lca4(TreeNode root, HashSet<TreeNode> hashSet){ //tc-O(n)
+        if(root==null)
+            return null;
+        if(hashSet.contains(root)) // O(1) tc --> agar current node hashset me hai to vo hi lca hai
+            return root;
+        TreeNode l=lca4(root.left,hashSet);
+        TreeNode r=lca4(root.right,hashSet);
+
+        if(l!=null && r!=null)
+            return root;
+        else if(l!=null && r==null)
+            return l;
+        else
+            return r;
+    }
+    //total tc - o(n) + o(n) = o(n)  -->o(n) for converting array to hashset and other o(n) for lca4 function
 }
