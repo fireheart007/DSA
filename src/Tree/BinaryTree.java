@@ -70,6 +70,7 @@ public class BinaryTree {
 //        we can not put "root" node as argument in the function because we don't have the address of the root node
         Disp(root);
     }
+    //https://leetcode.com/problems/count-complete-tree-nodes/description/
     private int size(Node n){
         if(n==null)
             return 0;
@@ -224,6 +225,7 @@ public class BinaryTree {
     }
 
     //Given preorder and inorder traversal create the binary tree
+    //https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
     private Node createPreIn(int[] pre, int preS, int preE, int[] in, int inS, int inE) {
         if(preS>preE || inS>inE) //agar index out of bound ho to null return kr do
             return null;
@@ -357,6 +359,7 @@ public class BinaryTree {
     }
 
 //    Finding if 2 trees are equivalent or not
+    //https://leetcode.com/problems/same-tree/description/
     public boolean equivalent(Node root1, Node root2){
         if(root1==null && root2==null) //agar dono tree empty hai then return true
             return true;
@@ -391,7 +394,7 @@ public class BinaryTree {
     }
 
 //    Check if the given binary tree is BST
-
+//https://leetcode.com/problems/validate-binary-search-tree/description/
 //    O(n^2) time complexity approach:-
     private boolean isBST(Node n){ //here there are 4 recursive calls
         if(n==null)
@@ -436,7 +439,7 @@ public class BinaryTree {
     }
 
 //    Find the size of biggest BST present in the given Binary Tree
-
+//https://practice.geeksforgeeks.org/problems/largest-bst/1
 //    O(n^2) time complexity approach:-
     private int BiggestBST(Node n){
         if(n==null)

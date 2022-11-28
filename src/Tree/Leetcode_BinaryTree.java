@@ -278,4 +278,64 @@ public class Leetcode_BinaryTree {
             return r;
     }
     //total tc - o(n) + o(n) = o(n)  -->o(n) for converting array to hashset and other o(n) for lca4 function
+
+    //Given the root of a binary tree, determine if it is a valid BST-  O(n) tc
+    //https://leetcode.com/problems/validate-binary-search-tree/description/
+    public boolean isValidBST(TreeNode root) {
+        return isBST2(root).isBST;
+    }
+    class isBSTpair{
+        boolean isBST=true;
+        //we have taken min , max long here due to given constraints in this ques. as max value of a node can be 2^31-1 which is Integer.MAX_VALUE
+        long min=Long.MAX_VALUE;
+        long max=Long.MIN_VALUE;
+    }
+    private isBSTpair isBST2(TreeNode n){
+        if(n==null)
+            return new isBSTpair();
+
+        isBSTpair L=isBST2(n.left);
+        isBSTpair R=isBST2(n.right);
+        isBSTpair ans=new isBSTpair();
+        ans.min=Math.min(n.val,Math.min(L.min,R.min));
+        ans.max=Math.max(n.val,Math.max(L.max,R.max));
+
+        if(L.max<n.val && R.min>n.val){
+            ans.isBST= L.isBST && R.isBST;
+        }
+        else
+            ans.isBST=false;
+
+        return ans;
+    }
+
+    //Binary Tree Level Order Traversal - O(n) tc
+    //https://leetcode.com/problems/binary-tree-level-order-traversal/description/
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        return levelNextLn(root);
+    }
+    public List<List<Integer>> levelNextLn(TreeNode root){
+        List<List<Integer>> list=new ArrayList<>();
+        if(root!=null){
+            Queue<TreeNode> Q=new LinkedList<>();
+            Q.add(root);
+            while(true){
+                int nodeCount=Q.size();
+                List<Integer> al=new ArrayList<>();
+                while(nodeCount>0){
+                    TreeNode n=Q.poll();
+                    al.add(n.val);
+                    if(n.left!=null)
+                        Q.add(n.left);
+                    if(n.right!=null)
+                        Q.add(n.right);
+                    nodeCount--;
+                }
+                list.add(new ArrayList<>(al));
+                if(Q.isEmpty())
+                    break;
+            }
+        }
+        return list;
+    }
 }
