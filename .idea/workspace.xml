@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="initial version">
-      <change afterPath="$PROJECT_DIR$/src/Tree/Leetcode_BST.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,13 +57,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660836389500</updated>
-    </task>
-    <task id="LOCAL-00012" summary="initial version">
-      <created>1664484010901</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1664484010901</updated>
     </task>
     <task id="LOCAL-00013" summary="initial version">
       <created>1664716142951</created>
@@ -402,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669619394724</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="initial version">
+      <created>1669795718580</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1669795718581</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
