@@ -74,4 +74,29 @@ public class Leetcode_BST {
         else //agar p&q me se ek current node ke left me hai or ek current node ke right me then return the current node
             return root;
     }
+
+    //Kth Smallest Element in a BST - O(n) tc and O(n) sc --> to optimize use morrris traversal where tc=O(n) and sc=O(1)
+    //https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+    public int kthSmallest(TreeNode root, int k) {
+        List<Integer> al=new ArrayList<>();
+        inorder(root,al); //BST ka inorder AL me store kr lo
+        return al.get(k-1); //or BST ka inorder sorted hota hai isliye (k-1)th index element return kr do, vo hi kth smallest element hoga
+    }
+    public void inorder(TreeNode n, List<Integer> al){
+        if(n==null)
+            return;
+        inorder(n.left,al);
+        al.add(n.val);
+        inorder(n.right,al);
+    }
+
+    //Kth largest element in BST - O(n) tc and O(n) sc --> to optimize use morrris traversal where tc=O(n) and sc=O(1)
+    //https://practice.geeksforgeeks.org/problems/kth-largest-element-in-bst/1
+    public int kthLargest(TreeNode root,int K)
+    {
+        List<Integer> al=new ArrayList<>();
+        inorder(root,al);
+        return al.get(al.size()-K); // kth largest element will be (AL.size-k)th index element of the sorted array list
+    }
+
 }
