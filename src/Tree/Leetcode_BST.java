@@ -99,4 +99,38 @@ public class Leetcode_BST {
         return al.get(al.size()-K); // kth largest element will be (AL.size-k)th index element of the sorted array list
     }
 
+    //Predecessor And Successor In BST - O(n) tc
+    // Alternative approach -> store the inorder of BST in AL and then find index of key in it and then pred =(idx-1)th ele and succ =(idx+1)th ele
+    //https://www.codingninjas.com/codestudio/problems/_893049
+    public static ArrayList<Integer> predecessorSuccessor(TreeNode root, int key) {
+        int pred=-1,succ=-1; //initializing predecessor and successor with -1
+        TreeNode temp=root;
+
+        //finding position of key
+        while(temp.val!=key){
+            if(temp.val<key){ //agar current node key se chhota hai to
+                pred=temp.val;//current node possible predecessor ho skta hai isliye use pred me store kro
+                temp=temp.right;// or ab key ko current node ke right subtree me dhoondo
+            }
+            else{ //agar current node key se bada hai to
+                succ=temp.val; //current node possible successor ho skta hai isliye use succ me store kro
+                temp=temp.left;// or ab key ko current node ke left subtree me dhoondo
+            }
+        }
+        //finding pred and succ
+        TreeNode leftTree=temp.left; //key vaale node ka left subtree lo
+        while(leftTree!=null){ //or left subtree ka max element find kro
+            pred=leftTree.val; //max of left subtree will be the predecessor
+            leftTree=leftTree.right; //we can find max of left subtree by going to its rightest node
+        }
+        TreeNode rightTree=temp.right;//key vaale node ka right subtree lo
+        while(rightTree!=null){//or right subtree ka min element find kro
+            succ=rightTree.val;//min of right subtree will be the successor
+            rightTree=rightTree.left;//we can find min of right subtree by going to its leftest node
+        }
+        ArrayList<Integer> al=new ArrayList<>();
+        al.add(pred);al.add(succ); //store both pred and succ in al and return it
+        return al;
+    }
+
 }
