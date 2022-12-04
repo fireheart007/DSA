@@ -338,4 +338,18 @@ public class Leetcode_BinaryTree {
         }
         return list;
     }
+
+    //Flatten Binary Tree to Linked List
+    //https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
+    //1st Approach -> TC- O(n), SC-O(n)
+    TreeNode prev=null; //initially previous root is null
+    public void flatten(TreeNode root) {//here we have to do -> "Right Left Root" for flattening the tree in the same order as a pre-order traversal of the tree
+        if(root==null)
+            return;
+        flatten(root.right); //pehle right subtree tree flat kro
+        flatten(root.left); //uske baad left subtree flat kro
+        root.right=prev;
+        root.left=null;
+        prev=root;
+    }
 }
