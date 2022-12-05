@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="initial version">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/BinaryTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tree/Leetcode_BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/Leetcode_BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tree/client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/client1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,20 +57,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660836389500</updated>
-    </task>
-    <task id="LOCAL-00017" summary="initial version">
-      <created>1665001602918</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1665001602918</updated>
-    </task>
-    <task id="LOCAL-00018" summary="initial version">
-      <created>1665066793194</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1665066793194</updated>
     </task>
     <task id="LOCAL-00019" summary="initial version">
       <created>1665088695922</created>
@@ -404,7 +387,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670159283336</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="initial version">
+      <created>1670269677659</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1670269677660</updated>
+    </task>
+    <task id="LOCAL-00067" summary="initial version">
+      <created>1670269915998</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1670269915998</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
