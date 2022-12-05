@@ -487,4 +487,57 @@ public class BinaryTree {
     public int BiggestBST2(){
         return BiggestBST2(root).BiggestBST;
     }
+
+    //O(n) tc and O(1) sc
+    public void morrisTraversalInorder(){
+        Node curr=root;
+        while(curr!=null){
+            if(curr.left==null){  //agar curr node ka left child nhi hai to seedha curr node print kro
+                System.out.println(curr.data);
+                curr=curr.right;//or uske right child ko visit kro
+            }
+            else{//agar curr node ka left child hai to
+                Node pred=curr.left; //curr node ka predecessor find kro --> which means last node to visit in left subtree
+                while(pred.right!=null && pred.right!=curr){ //jab tak pred ka right null nhi ho jaata ya vo curr ko point na kre
+                    pred=pred.right; //tab tak pred ke right pe jaao
+                }//loop exit krne par pred me humaare last node ki value hogi
+
+                if(pred.right==null){ //ab agar pred ka right null hai to hum temporary link banayenge jis se hum backtrack kr paaye baad me
+                    pred.right=curr; //pred ke right ko curr node pe point kro
+                    curr=curr.left; //uske baaad curr node ke left ko visit kro
+                }
+                else{ //agar temporary link bana hua hai matlab pred ka right curr ko point kr rha hai
+                    pred.right=null; //to iska matlab hum backtrack kr rhe hai, isliye temporary link remove kro --> pred ke right ko vaapas null kro
+                    System.out.println(curr.data); // hum inorder morris traversal kr rhe hai isliye left ke baad vapas root par aane par node print kro
+                    curr=curr.right; //uske baad ab curr node ka right visit kro
+                }
+            }
+        }
+    }
+    public void morrisTraversalPreOrder(){ //sab kuchh same as inorder just printing order changes
+        Node curr=root;
+        while(curr!=null){
+            if(curr.left==null){
+                System.out.println(curr.data);
+                curr=curr.right;
+            }
+            else{
+                Node pred=curr.left;
+                while(pred.right!=null && pred.right!=curr){
+                    pred=pred.right;
+                }
+
+                if(pred.right==null){
+                    pred.right=curr;
+                    System.out.println(curr.data); // hum preorder morris traversal kr rhe hai isliye left pe jaane se pehle curr node print kro
+                    curr=curr.left;
+                }
+                else{
+                    pred.right=null;
+                    curr=curr.right;
+                }
+            }
+        }
+    }
+
 }

@@ -7,7 +7,7 @@ public class client1 {
 //        Input Copy :-
 //        7 true 8 true 12 false false true 11 false false true 9 false true 5 false false
 
-//        BinaryTree bt=new BinaryTree();
+        BinaryTree bt=new BinaryTree();
 //        System.out.println("The formed tree is : - ");
 //        bt.Disp();
 //        System.out.println("The size of the tree is ");
@@ -65,9 +65,13 @@ public class client1 {
 //        System.out.println(bt.isBST2());  //o(n) time complexity
 
         //Find the size of biggest BST present in the given Binary Tree
-        int[] pre={10,20,30,-1,-1,50,-1,-1,40,60,-1,-1,-1};
-        BinaryTree bt=new BinaryTree(pre);
-//        System.out.println(bt.BiggestBST());
-        System.out.println(bt.BiggestBST2());
+//        int[] pre={10,20,30,-1,-1,50,-1,-1,40,60,-1,-1,-1};
+//        BinaryTree bt=new BinaryTree(pre);
+////        System.out.println(bt.BiggestBST());
+//        System.out.println(bt.BiggestBST2());
+
+        //Morris Traversal
+//        bt.morrisTraversalInorder();
+        bt.morrisTraversalPreOrder();
     }
 }

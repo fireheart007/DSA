@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="initial version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/BinaryTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tree/Leetcode_BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/Leetcode_BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tree/client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/client1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +60,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660836389500</updated>
-    </task>
-    <task id="LOCAL-00016" summary="initial version">
-      <created>1665001534314</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1665001534314</updated>
     </task>
     <task id="LOCAL-00017" summary="initial version">
       <created>1665001602918</created>
@@ -402,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669924161147</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="initial version">
+      <created>1670159283335</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1670159283336</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

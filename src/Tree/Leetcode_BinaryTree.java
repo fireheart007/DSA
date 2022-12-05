@@ -348,8 +348,8 @@ public class Leetcode_BinaryTree {
             return;
         flatten(root.right); //pehle right subtree tree flat kro
         flatten(root.left); //uske baad left subtree flat kro
-        root.right=prev;
-        root.left=null;
-        prev=root;
+        root.right=prev; //current node ke right ko prev node bana do
+        root.left=null; //or uska left null kr do
+        prev=root; //uske baad prev node me current node ki value daal do
     }
 }
