@@ -488,7 +488,7 @@ public class BinaryTree {
         return BiggestBST2(root).BiggestBST;
     }
 
-    //O(n) tc and O(1) sc
+    //O(n) tc and O(1) sc --> it is a technique of traversal which improves sc to O(1) by using only variables without the use of recursion for backtracking
     public void morrisTraversalInorder(){
         Node curr=root;
         while(curr!=null){
