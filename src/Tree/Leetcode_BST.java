@@ -133,4 +133,32 @@ public class Leetcode_BST {
         return al;
     }
 
+    //Flatten BST To A Sorted List --> TC-O(n),  SC-O(1)
+    //https://www.codingninjas.com/codestudio/problems/flatten-bst-to-a-sorted-list_1169459
+    public static void inorderBST(TreeNode root,List<TreeNode> al){
+        if(root==null)
+            return;
+        inorderBST(root.left,al);
+        al.add(root);
+        inorderBST(root.right,al);
+    }
+    public static TreeNode flatten(TreeNode root)
+    {
+        List<TreeNode> al=new ArrayList<>();
+        //Storing nodes in sorted format in AL using inorder of BST
+        inorderBST(root,al);
+
+        for(int i=0;i<al.size();i++){ //ab AL ko traverse kro or curr node ke right ko next node pe point kro or curr node ka left null kr do
+            TreeNode curr=al.get(i);
+            if(i==al.size()-1){ //agar last node pe ho to uska left bhi null kro or right bhi
+                curr.left=null;
+                curr.right=null;
+                continue;
+            }
+            curr.right=al.get(i+1);
+            curr.left=null;
+        }
+        return al.get(0); //first node of AL return kr do, vo root hoga sorted Link list ka
+    }
+
 }
