@@ -134,7 +134,7 @@ public class Leetcode_BST {
     }
 
     //Flatten BST To A Sorted List --> TC-O(n),  SC-O(1)
-    //https://www.codingninjas.com/codestudio/problems/flatten-bst-to-a-sorted-list_1169459
+    //https://www.codingninjas.com/codestudio/problems/1169459
     public static void inorderBST(TreeNode root,List<TreeNode> al){
         if(root==null)
             return;
