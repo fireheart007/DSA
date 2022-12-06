@@ -339,11 +339,11 @@ public class Leetcode_BinaryTree {
         return list;
     }
 
-    //Flatten Binary Tree to Linked List
+    //Flatten Binary Tree to Linked List --> The "linked list" should be in the same order as a pre-order traversal of the binary tree
     //https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
     //1st Approach -> TC- O(n), SC-O(n)
     TreeNode prev=null; //initially previous root is null
-    public void flatten(TreeNode root) {//here we have to do -> "Right Left Root" for flattening the tree which is like reverse pre-order traversal of a tree
+    public void flatten(TreeNode root) {//here we have to do -> "Right Left Root" for flattening the tree
         if(root==null)
             return;
         flatten(root.right); //pehle right subtree tree flat kro
@@ -351,5 +351,20 @@ public class Leetcode_BinaryTree {
         root.right=prev; //current node ke right ko prev node bana do
         root.left=null; //or uska left null kr do
         prev=root; //uske baad prev node me current node ki value daal do
+    }
+    //2nd Approach -> TC- O(n), SC- O(1) --> Using morris traversal
+    public void flattenMorris(TreeNode root) {
+        while(root!=null){
+            if(root.left!=null){ //agar left child exist krta hai to
+                TreeNode pred=root.left; //curr node ka predecessor dhoondo
+                while(pred.right!=null){
+                    pred=pred.right;
+                }
+                pred.right=root.right; //or predcessor ke right ko cuur node ke right pe point kr do
+                root.right=root.left; //uske baas curr node ke right ko curr node ke left pe point kr do
+                root.left=null; //or curr node ka left null kr do
+            }
+            root=root.right; //uske baad curr node ka right subtree visit kro
+        }
     }
 }
