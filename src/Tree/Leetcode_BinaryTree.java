@@ -360,11 +360,56 @@ public class Leetcode_BinaryTree {
                 while(pred.right!=null){
                     pred=pred.right;
                 }
-                pred.right=root.right; //or predcessor ke right ko cuur node ke right pe point kr do
+                pred.right=root.right; //or predcessor ke right ko curr node ke right pe point kr do
                 root.right=root.left; //uske baas curr node ke right ko curr node ke left pe point kr do
                 root.left=null; //or curr node ka left null kr do
             }
             root=root.right; //uske baad curr node ka right subtree visit kro
         }
+    }
+
+    //Boundary Traversal of binary tree
+    //https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1
+    ArrayList <Integer> boundary(TreeNode node)
+    {
+        ArrayList <Integer> al=new ArrayList<>();
+        al.add(node.val); //adding root node
+        leftTraverse(node.left,al); //traversing left boundary nodes of the tree except the leaf nodes because they will be covered in leafTraversal
+
+        //we have to travel leaf nodes for left and right tree separately otherwise for eg:- if tree has only single node then it will be added twice in al
+        //first when the root is added and second when we will traverse the leaf nodes because it will also include root node
+        leafTraverse(node.left,al); // Traversing Leaf nodes of left subtree
+        leafTraverse(node.right,al);// Traversing Leaf nodes of right subtree
+
+        rightTraverse(node.right,al); // Traversing Reverse right boundary nodes
+        return al;
+    }
+    public void leftTraverse(TreeNode root,ArrayList<Integer> al){
+        if((root==null)||(root.left==null && root.right==null)) //if node is null ,or it is boundary node then don't add to al and return
+            return;
+        al.add(root.val); //add the node to al
+        if(root.left!=null) //if left child exist then go to left
+            leftTraverse(root.left,al);
+        else //otherwise go to right
+            leftTraverse(root.right,al);
+    }
+    public void leafTraverse(TreeNode root,ArrayList<Integer> al){
+        if(root==null)
+            return;
+        if(root.left==null && root.right==null){ //if the node is leaf node then add to al and return
+            al.add(root.val);
+            return;
+        }
+        leafTraverse(root.left,al); //traverse the leaf node of left subtree
+        leafTraverse(root.right,al);//traverse the leaf node of right subtree
+    }
+    public void rightTraverse(TreeNode root,ArrayList<Integer> al){
+        if((root==null)||(root.left==null && root.right==null)) //if node is null ,or it is boundary node then don't add to al and return
+            return;
+        if(root.right!=null)//if right child exist then go to right
+            rightTraverse(root.right,al);
+        else //otherwise go to left
+            rightTraverse(root.left,al);
+        al.add(root.val); //add the node to al during backtracking so that we will add the right boundary nodes in reverse order
     }
 }
