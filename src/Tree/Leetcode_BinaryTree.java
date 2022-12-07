@@ -277,7 +277,7 @@ public class Leetcode_BinaryTree {
         else
             return r;
     }
-    //total tc - o(n) + o(n) = o(n)  -->o(n) for converting array to hashset and other o(n) for lca4 function
+    //total tc - o(n) + o(n) = o(2n)  -->o(n) for converting array to hashset and other o(n) for lca4 function
 
     //Given the root of a binary tree, determine if it is a valid BST-  O(n) tc
     //https://leetcode.com/problems/validate-binary-search-tree/description/
