@@ -425,6 +425,7 @@ public class Leetcode_BinaryTree {
     }
     static ArrayList <Integer> verticalOrder(TreeNode root)
     {
+        //We have used TreeMap here so that the values stored will be sorted according to the key
         Map<Integer,ArrayList<Integer>> map=new TreeMap<>(); //map banao jisme horizontal distance as key and al of nodes as values store hongi
         Queue<pair> q=new LinkedList<>(); //level order traversal ke liye queue banao joki horizontal distance and node store kregi
         q.add(new pair(0,root)); //root add kro queue me, or root ko hum origin consider kr rhe hai isliye uska horizontal distance '0' hoga
