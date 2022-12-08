@@ -412,4 +412,45 @@ public class Leetcode_BinaryTree {
             rightTraverse(root.left,al);
         al.add(root.val); //add the node to al during backtracking so that we will add the right boundary nodes in reverse order
     }
+
+    //Vertical Traversal of Binary Tree
+    //https://practice.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1
+    static class pair{
+        int hd;
+        TreeNode node;
+        public pair(int dist,TreeNode n){
+            hd=dist;
+            node=n;
+        }
+    }
+    static ArrayList <Integer> verticalOrder(TreeNode root)
+    {
+        Map<Integer,ArrayList<Integer>> map=new TreeMap<>(); //map banao jisme horizontal distance as key and al of nodes as values store hongi
+        Queue<pair> q=new LinkedList<>(); //level order traversal ke liye queue banao joki horizontal distance and node store kregi
+        q.add(new pair(0,root)); //root add kro queue me, or root ko hum origin consider kr rhe hai isliye uska horizontal distance '0' hoga
+        while (!q.isEmpty()){
+            pair curr=q.poll();
+            if(map.containsKey(curr.hd))//agar horizontal distance exist krta hai map me,iska matlab al bani hui hai
+                map.get(curr.hd).add(curr.node.val);//so uski al me bas curr node ki value add krdo
+
+            else{ //agar horizontal distance ki key exist nhi krti
+                ArrayList<Integer> al=new ArrayList<>(); //to nayi al banao
+                al.add(curr.node.val); //or usme curr node ki valye daalo
+                map.put(curr.hd,al); //ab curr key or uske corresponding banayi hui al ko map me daal do
+            }
+
+            // level order traversal logic
+            if(curr.node.left!=null)
+                q.add(new pair(curr.hd-1,curr.node.left)); //agar left node pe jayenge to horizontal distance me -1 ho jayega
+            if(curr.node.right!=null)
+                q.add(new pair(curr.hd+1,curr.node.right)); //agar right node pe jayenge to horizontal distance me +1 ho jayega
+        }
+        ArrayList<Integer> ans=new ArrayList<>();
+        for (ArrayList<Integer> al : map.values()){ //iterate through the value of map
+            for(int i=0;i<al.size();i++){ //iterate through values of al
+                ans.add(al.get(i));//add the value of al in the ans arraylist
+            }
+        }
+        return ans;
+    }
 }
