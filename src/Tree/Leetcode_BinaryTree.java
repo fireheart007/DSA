@@ -448,9 +448,8 @@ public class Leetcode_BinaryTree {
         }
         ArrayList<Integer> ans=new ArrayList<>();
         for (ArrayList<Integer> al : map.values()){ //iterate through the value of map
-            for(int i=0;i<al.size();i++){ //iterate through values of al
-                ans.add(al.get(i));//add the value of al in the ans arraylist
-            }
+            //add all the values of al in the ans arraylist
+            ans.addAll(al);
         }
         return ans;
     }
