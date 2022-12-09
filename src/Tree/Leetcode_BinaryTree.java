@@ -413,7 +413,7 @@ public class Leetcode_BinaryTree {
         al.add(root.val); //add the node to al during backtracking so that we will add the right boundary nodes in reverse order
     }
 
-    //Vertical Traversal of Binary Tree
+    //Vertical Traversal of Binary Tree -> TC-O(n)
     //https://practice.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1
     static class pair{
         int hd;
@@ -494,6 +494,61 @@ public class Leetcode_BinaryTree {
                 q.add(new pair(curr.hd+1,curr.node.right));
         }
         ArrayList<Integer> ans = new ArrayList<>(map.values()); //al me daal do poore map ki values
+        return ans;
+    }
+
+    //Left View of Binary Tree -> TC,SC- O(n)
+    //https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1
+    static class pairLvl{
+        int level;
+        TreeNode node;
+        public pairLvl(int lvl,TreeNode n){
+            level=lvl;
+            node=n;
+        }
+    }
+    ArrayList<Integer> leftView(TreeNode root)
+    {
+        ArrayList<Integer> ans = new ArrayList<>();
+        if(root==null)
+            return ans;
+        Map<Integer,Integer> map=new TreeMap<>(); //map will store level and node corresponding to it
+        Queue<pairLvl> q=new LinkedList<>();
+        q.add(new pairLvl(0,root));
+        while(!q.isEmpty()){
+            pairLvl curr=q.poll();
+            if(!map.containsKey(curr.level)) //agar map me current level ki key pehle se exist nhi krti
+                map.put(curr.level,curr.node.val); //to fir key or uske corresponding node dono map me daal do
+            //agar key exist krti ha,to jo bad ki nodes hai same level par vo nhi dikhegi left view se, isliye hum map me unhe nhi daalenge
+            if(curr.node.left!=null)
+                q.add(new pairLvl(curr.level+1,curr.node.left)); //left ya right jaane pe level me +1 hoga
+            if(curr.node.right!=null)
+                q.add(new pairLvl(curr.level+1,curr.node.right));
+        }
+        ans.addAll(map.values());
+        return ans;
+    }
+
+    //Binary Tree Right Side View -> TC,SC- O(n)
+    //https://leetcode.com/problems/binary-tree-right-side-view/description/
+    public List<Integer> rightSideView(TreeNode root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        if(root==null)
+            return ans;
+        Map<Integer,Integer> map=new TreeMap<>();
+        Queue<pairLvl> q=new LinkedList<>();
+        q.add(new pairLvl(0,root));
+        while(!q.isEmpty()){
+            pairLvl curr=q.poll();
+            map.put(curr.level,curr.node.val);//map me key or uske corresponding node daal do
+            //agar curr level ki key pehle se exist krti hogi to fir jo node baad me ayegi same level par, map ki value us se update ho jayegi
+            //jo pehle ki nodes hai same level par vo nhi dikhegi right view se, isliye same level par map ki value baad ki node se update kr do
+            if(curr.node.left!=null)
+                q.add(new pairLvl(curr.level+1,curr.node.left));
+            if(curr.node.right!=null)
+                q.add(new pairLvl(curr.level+1,curr.node.right));
+        }
+        ans.addAll(map.values());
         return ans;
     }
 }
