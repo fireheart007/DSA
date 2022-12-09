@@ -453,4 +453,47 @@ public class Leetcode_BinaryTree {
         }
         return ans;
     }
+
+    //Top View of Binary Tree -> TC,SC- O(n)
+    //https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1
+    // Similar logic to vertical order traversal --> store the nodes in map wrt to its horizontal distance
+    static ArrayList<Integer> topView(TreeNode root)
+    {
+        Map<Integer,Integer> map=new TreeMap<>(); //map banao jisme h.d. as key and sirf pehli node corresponding to that h.d. will be stored
+        Queue<pair> q=new LinkedList<>();
+        q.add(new pair(0,root));
+        while(!q.isEmpty()){
+            pair curr=q.poll();
+            if(!map.containsKey(curr.hd)) //agar map me horizontal distance ki key pehle se exist nhi krti
+                map.put(curr.hd,curr.node.val); //to fir key or uske corresponding node dono map me daal do
+            //agar key exist krti ha,to jo bad ki nodes hai same h.d. par vo nhi dikhegi top view se, isliye hum map me unhe nhi daalenge
+            if(curr.node.left!=null)
+                q.add(new pair(curr.hd-1,curr.node.left));
+            if(curr.node.right!=null)
+                q.add(new pair(curr.hd+1,curr.node.right));
+        }
+        ArrayList<Integer> ans = new ArrayList<>(map.values()); //al me daal do poore map ki values
+        return ans;
+    }
+
+    //Bottom View of Binary Tree -> TC,SC- O(n)
+    //https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1
+    public ArrayList <Integer> bottomView(TreeNode root)
+    {
+        Map<Integer,Integer> map=new TreeMap<>(); //map banao jisme h.d. as key and node corresponding to that h.d. will be stored
+        Queue<pair> q=new LinkedList<>();
+        q.add(new pair(0,root));
+        while(!q.isEmpty()){
+            pair curr=q.poll();
+            map.put(curr.hd,curr.node.val);//map me key or uske corresponding node daal do
+            //agar h.d. ki key pehle se exist krti hogi to fir jo node baad me ayegi same h.d. par, map ki value us se update ho jayegi
+            //jo upar ki nodes hai same h.d. par vo nhi dikhegi bottom view se, isliye same h.d par map ki value baad ki node se update kr do
+            if(curr.node.left!=null)
+                q.add(new pair(curr.hd-1,curr.node.left));
+            if(curr.node.right!=null)
+                q.add(new pair(curr.hd+1,curr.node.right));
+        }
+        ArrayList<Integer> ans = new ArrayList<>(map.values()); //al me daal do poore map ki values
+        return ans;
+    }
 }
