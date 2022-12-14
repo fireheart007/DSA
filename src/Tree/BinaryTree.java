@@ -144,7 +144,7 @@ public class BinaryTree {
 //  Since the above function has 4 recursive calls and is traversing the whole tree 2 times - once for diameter and again for obtaining height, so we will make a
 //  class to return 2 things in a single function to reduce the complexity
     class DiaHtPair{
-//    Diameter=0 and Height= -1 are the base cases for dia and height, so we have initialized these variables with them
+//    Diameter=0 and Height= -1 are the base cases for dia and height func. , so we have initialized these variables with them
         int dia=0;
         int ht=-1;
     }
