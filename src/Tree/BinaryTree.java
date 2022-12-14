@@ -239,7 +239,7 @@ public class BinaryTree {
         }
         Node n=new Node(pre[preS]); //enter the root node in the tree
         n.left=createPreIn(pre,preS+1,preS+left_size,in,inS,idx-1); //root node ka left subtree banao
-        n.right=createPreIn(pre,preS+left_size+1,preE,in,idx+1,inE); //root node ka left subtree banao
+        n.right=createPreIn(pre,preS+left_size+1,preE,in,idx+1,inE); //root node ka right subtree banao
         return n;
     }
     public BinaryTree(int[] pre, int[] in){
