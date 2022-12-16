@@ -4,6 +4,8 @@
     <list default="true" id="3b205a41-59e3-4243-92ec-4ffa057701f9" name="Changes" comment="initial version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tree/Leetcode_BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/Leetcode_BinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tree/client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tree/client1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +60,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1660836389500</updated>
-    </task>
-    <task id="LOCAL-00032" summary="initial version">
-      <created>1665650050250</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1665650050250</updated>
     </task>
     <task id="LOCAL-00033" summary="initial version">
       <created>1665660665690</created>
@@ -402,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671044927342</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="initial version">
+      <created>1671049033617</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1671049033617</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

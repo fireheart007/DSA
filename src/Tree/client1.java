@@ -72,6 +72,6 @@ public class client1 {
 
         //Morris Traversal
 //        bt.morrisTraversalInorder();
-        bt.morrisTraversalPreOrder();
+//        bt.morrisTraversalPreOrder();
     }
 }

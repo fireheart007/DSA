@@ -128,7 +128,8 @@ public class BinaryTree {
         return height(root);
     }
 
-   //This approach have O(n^2) time complexity
+   //Diameter of BT- https://leetcode.com/problems/diameter-of-binary-tree/description/
+    //This approach have O(n^2) time complexity
     private int dia(Node n){ //Diameter means max. distance b/w any 2 nodes in a tree
         if(n==null)
             return 0;
@@ -399,7 +400,7 @@ public class BinaryTree {
     private boolean isBST(Node n){ //here there are 4 recursive calls
         if(n==null)
             return true;
-        if(max(n.left)<=n.data && min(n.right)>n.data){
+        if(max(n.left)<=n.data && min(n.right)>n.data){ //check curr node that if it satisfies BST Condition or not
             boolean L= isBST(n.left);
             boolean R= isBST(n.right);
             return L&&R;
