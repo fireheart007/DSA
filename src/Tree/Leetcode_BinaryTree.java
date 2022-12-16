@@ -67,11 +67,10 @@ public class Leetcode_BinaryTree {
     public void pathSum3(TreeNode n,long targetSum){
         if(n==null)
             return;
-        targetSum=targetSum-n.val;
-        if(targetSum==0) //agar targetsum 0 ho gya to count++ kr do
+        if(targetSum-n.val==0) //agar targetsum 0 ho gya to count++ kr do
             count++;
-        pathSum3(n.left,targetSum); //left subtree me targetsum find kro
-        pathSum3(n.right,targetSum); //right subtree me targetsum find kro
+        pathSum3(n.left,targetSum-n.val); //left subtree me targetsum find kro
+        pathSum3(n.right,targetSum-n.val); //right subtree me targetsum find kro
     }
 
     // Sum Root to Leaf Numbers - O(n) tc
