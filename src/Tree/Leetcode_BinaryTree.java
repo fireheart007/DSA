@@ -449,7 +449,7 @@ public class Leetcode_BinaryTree {
         return ans;
     }
 
-    //Binary Tree Right Side View -> TC,SC- O(n)
+    //Right View of Binary Tree -> TC,SC- O(n)
     //https://leetcode.com/problems/binary-tree-right-side-view/description/
     public List<Integer> rightSideView(TreeNode root) {
         ArrayList<Integer> ans = new ArrayList<>();
