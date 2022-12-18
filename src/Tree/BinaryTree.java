@@ -400,7 +400,7 @@ public class BinaryTree {
     private boolean isBST(Node n){ //here there are 4 recursive calls
         if(n==null)
             return true;
-        if(max(n.left)<=n.data && min(n.right)>n.data){ //check curr node that if it satisfies BST Condition or not
+        if(max(n.left)<n.data && min(n.right)>n.data){ //check curr node that if it satisfies BST Condition or not
             boolean L= isBST(n.left);
             boolean R= isBST(n.right);
             return L&&R;
@@ -414,8 +414,9 @@ public class BinaryTree {
 //    O(n) time complexity approach :-
     class isBSTpair{
         boolean isBST=true;
-        int min=Integer.MAX_VALUE;
-        int max=Integer.MIN_VALUE;
+        //we have taken min , max long here due to given constraints in this ques. as max value of a node can be 2^31-1 which is Integer.MAX_VALUE
+        long min=Long.MAX_VALUE;
+        long max=Long.MIN_VALUE;
     }
     private isBSTpair isBST2(Node n){
         if(n==null)
@@ -427,7 +428,7 @@ public class BinaryTree {
         ans.min=Math.min(n.data,Math.min(L.min,R.min));
         ans.max=Math.max(n.data,Math.max(L.max,R.max));
 
-        if(L.max<=n.data && R.min>n.data){
+        if(L.max<n.data && R.min>n.data){
             ans.isBST= L.isBST && R.isBST;
         }
         else
