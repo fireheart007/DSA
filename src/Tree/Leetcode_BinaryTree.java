@@ -305,7 +305,7 @@ public class Leetcode_BinaryTree {
         return al;
     }
     public void leftTraverse(TreeNode root,ArrayList<Integer> al){
-        if((root==null)||(root.left==null && root.right==null)) //if node is null ,or it is boundary node then don't add to al and return
+        if((root==null)||(root.left==null && root.right==null)) //if node is null ,or it is leaf node then don't add to al and return
             return;
         al.add(root.val); //add the node to al
         if(root.left!=null) //if left child exist then go to left
@@ -386,7 +386,7 @@ public class Leetcode_BinaryTree {
             pair curr=q.poll();
             if(!map.containsKey(curr.hd)) //agar map me horizontal distance ki key pehle se exist nhi krti
                 map.put(curr.hd,curr.node.val); //to fir key or uske corresponding node dono map me daal do
-            //agar key exist krti ha,to jo bad ki nodes hai same h.d. par vo nhi dikhegi top view se, isliye hum map me unhe nhi daalenge
+            //agar key exist krti hai,to jo bad ki nodes hai same h.d. par vo nhi dikhegi top view se, isliye hum map me unhe nhi daalenge
             if(curr.node.left!=null)
                 q.add(new pair(curr.hd-1,curr.node.left));
             if(curr.node.right!=null)
@@ -439,7 +439,7 @@ public class Leetcode_BinaryTree {
             pairLvl curr=q.poll();
             if(!map.containsKey(curr.level)) //agar map me current level ki key pehle se exist nhi krti
                 map.put(curr.level,curr.node.val); //to fir key or uske corresponding node dono map me daal do
-            //agar key exist krti ha,to jo bad ki nodes hai same level par vo nhi dikhegi left view se, isliye hum map me unhe nhi daalenge
+            //agar key exist krti hai,to jo bad ki nodes hai same level par vo nhi dikhegi left view se, isliye hum map me unhe nhi daalenge
             if(curr.node.left!=null)
                 q.add(new pairLvl(curr.level+1,curr.node.left)); //left ya right jaane pe level me +1 hoga
             if(curr.node.right!=null)
