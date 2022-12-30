@@ -36,7 +36,7 @@ public class Merge_K_SortedArrays {
     }
     public static ArrayList<Integer> mergeKArrays(int[][] arr,int K)
     {
-        PriorityQueue<Pair> pq=new PriorityQueue<>((a,b)->a.data-b.data); //using lambda or comparator and storing data in increasing order
+        PriorityQueue<Pair> pq=new PriorityQueue<>((a,b)->a.data-b.data); //using lambda or comparator & storing data in increasing order -> we are making min heap
 
         //klogk TC of for loop -> logk for adding each element in PQ, and we are adding k elements
         for (int i = 0; i < arr.length; i++) {
