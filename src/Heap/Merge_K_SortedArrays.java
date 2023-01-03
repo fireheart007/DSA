@@ -60,5 +60,6 @@ public class Merge_K_SortedArrays {
         return ans;
     }
     // Overall TC = klogk + n*klogk = n*klogk
+    //n is the no. of elements in each 1D array and there are k 1D arrays
 
 }
